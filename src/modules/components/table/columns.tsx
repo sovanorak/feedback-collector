@@ -20,26 +20,30 @@ export type Feedback = {
 
 export const columns: ColumnDef<Feedback>[] = [
   {
-    id: "select",
-    header: ({ table }) => (
-      <Checkbox
-        checked={
-          table.getIsAllPageRowsSelected() ||
-          (table.getIsSomePageRowsSelected() && "indeterminate")
-        }
-        onCheckedChange={(value) => table.toggleAllPageRowsSelected(!!value)}
-        aria-label="Select all"
-      />
-    ),
-    cell: ({ row }) => (
-      <Checkbox
-        checked={row.getIsSelected()}
-        onCheckedChange={(value) => row.toggleSelected(!!value)}
-        aria-label="Select row"
-      />
-    ),
-    enableSorting: false,
-    enableHiding: false,
+    accessorKey: "id",
+    header: ({ column }) => {
+      return (
+        <Button
+          variant="ghost"
+          onClick={() => column.toggleSorting(column.getIsSorted() === "asc")}
+        >
+          Id
+          <ArrowUpDown className="ml-2 h-4 w-4" />
+        </Button>
+      );
+    },
+    cell: ({ row }) => {
+      const id = row.getValue("id") as string;
+      return <span className="font-semibold">{id}</span>;
+    },
+  },
+  {
+    accessorKey: "name",
+    header: "Name",
+    cell: ({ row }) => {
+      const name = row.getValue("name") as string;
+      return <span className="font-semibold">{name}</span>;
+    },
   },
   {
     accessorKey: "feedback",

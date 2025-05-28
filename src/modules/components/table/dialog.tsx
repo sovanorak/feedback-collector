@@ -10,8 +10,18 @@ import { Badge } from "@/components/ui/badge";
 import { Textarea } from "@/components/ui/textarea";
 import { Separator } from "@/components/ui/separator";
 import { Button } from "@/components/ui/button";
-import { MessageSquareMoreIcon, PlusCircle, Reply } from "lucide-react";
+import {
+  Mail,
+  Megaphone,
+  MessageSquareMoreIcon,
+  MessagesSquareIcon,
+  PlusCircle,
+  Reply,
+  ScanEye,
+  SendHorizontalIcon,
+} from "lucide-react";
 import { typeEmojiMap } from "./map-emoji";
+import { Card } from "@/components/ui/card";
 
 type DialogTableProps = {
   selectedRow: any;
@@ -40,57 +50,38 @@ export function DialogTable({
         <div>
           {selectedRow ? (
             <div className="space-y-4">
-              <p>
-                <span className="font-semibold text-gray-600">ID:</span>{" "}
-                {(selectedRow as any).id}
-              </p>
-              <p>
-                <span className="font-semibold text-gray-600">Email:</span>{" "}
-                {(selectedRow as any).email}
-              </p>
-              <div className="flex items-center gap-4">
-                <div>
-                  <span className="font-semibold text-gray-600">Status: </span>
-                  <Badge className={bgColor}>{text}</Badge>
-                </div>
-                <div>
-                  <span className="font-semibold text-gray-600">
-                    Rating-Score:
-                  </span>{" "}
-                  {(selectedRow as any).score}
-                </div>
-                <div>
-                  <span className="font-semibold text-gray-600">
-                    Feedback-Type:
-                  </span>
-                  {typeEmojiMap[(selectedRow as any).feedbackType]}
-                </div>
-              </div>
-              <div className="mt-6">
-                <span className="flex items-center gap-2 font-semibold text-gray-600">
+              <div>
+                <span className="flex items-center gap-2 font-semibold text-gray-600 mb-1">
                   <MessageSquareMoreIcon size={18} />
                   Feedback
                 </span>
-                <Textarea
-                  readOnly
-                  defaultValue={(selectedRow as any).feedback}
-                />
+                <p className="p-4 bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-200 rounded-md shadow-none">
+                  {(selectedRow as any).feedback}
+                </p>
               </div>
             </div>
           ) : (
             <p>No row selected.</p>
           )}
         </div>
-        <Separator className="my-4" />
-        <div className="flex flex-col gap-4">
+
+        <div className="flex flex-col gap-8 mt-4">
           <div>
-            <span className="flex items-center gap-2 font-semibold text-gray-600">
+            <span className="flex items-center gap-2 font-semibold text-gray-600 mb-1">
               <Reply />
               Sending Reply
             </span>
             <Textarea />
           </div>
-          <Button>Send</Button>
+          <Button
+            type="submit"
+            className="w-full bg-red-600 hover:bg-red-700 text-white cursor-pointer flex items-center justify-center gap-2 disabled:opacity-50 disabled:cursor-not-allowed transition duration-300
+            hover:-translate-y-1 py-6
+            "
+          >
+            <SendHorizontalIcon />
+            Send Reply
+          </Button>
         </div>
       </DialogContent>
     </Dialog>
