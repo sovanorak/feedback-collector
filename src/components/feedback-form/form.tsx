@@ -53,8 +53,10 @@ export function FeedbackForm() {
     <div className="py-10 px-8">
       <Card className="p-8 mx-auto flex flex-col gap-6 w-full max-w-lg">
         <div className="flex flex-col gap-2">
-          <h1 className="text-2xl font-semibold">Give us your feedback</h1>
-          <p className="text-muted-foreground text-sm">
+          <h1 className="text-lg lg:text-2xl font-semibold ">
+            Give us your feedback
+          </h1>
+          <p className="text-muted-foreground text-sm lg:text-base">
             Please fill in the form below to provide your feedback.
           </p>
         </div>
@@ -65,7 +67,7 @@ export function FeedbackForm() {
               name="name"
               render={({ field }) => (
                 <FormItem>
-                  <FormLabel>Name</FormLabel>
+                  <FormLabel className="text-sm lg:text-base">Name</FormLabel>
                   <FormControl>
                     <Input placeholder="Plese enter your name" {...field} />
                   </FormControl>
@@ -78,7 +80,7 @@ export function FeedbackForm() {
               name="email"
               render={({ field }) => (
                 <FormItem>
-                  <FormLabel>Email</FormLabel>
+                  <FormLabel className="text-sm lg:text-base">Email</FormLabel>
                   <FormControl>
                     <Input placeholder="Enter your email" {...field} />
                   </FormControl>
@@ -92,7 +94,9 @@ export function FeedbackForm() {
                 name="phoneNumber"
                 render={({ field }) => (
                   <FormItem>
-                    <FormLabel>Phone Number</FormLabel>
+                    <FormLabel className="text-sm lg:text-base">
+                      Phone Number
+                    </FormLabel>
                     <FormControl>
                       <Input placeholder="Phone number..." {...field} />
                     </FormControl>
@@ -105,7 +109,9 @@ export function FeedbackForm() {
                 name="score"
                 render={({ field }) => (
                   <FormItem>
-                    <FormLabel>Rating-Score (0-100)</FormLabel>
+                    <FormLabel className="text-sm lg:text-base">
+                      Rating-Score (0-100)
+                    </FormLabel>
                     <FormControl>
                       <Input
                         placeholder="Enter your rating score"
@@ -123,7 +129,9 @@ export function FeedbackForm() {
               name="feedbackType"
               render={({ field }) => (
                 <FormItem>
-                  <FormLabel>Feedback Type</FormLabel>
+                  <FormLabel className="text-sm lg:text-base">
+                    What is your thinking about our service?
+                  </FormLabel>
                   <FormControl>
                     <RadioGroup
                       onValueChange={field.onChange}
@@ -159,7 +167,9 @@ export function FeedbackForm() {
               name="feedback"
               render={({ field }) => (
                 <FormItem>
-                  <FormLabel>Feedback</FormLabel>
+                  <FormLabel className="text-sm lg:text-base">
+                    Feedback
+                  </FormLabel>
                   <FormControl>
                     <Textarea
                       placeholder="Please enter your feedback here"

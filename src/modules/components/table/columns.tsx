@@ -16,6 +16,7 @@ export type Feedback = {
   email: string;
   feedback: string;
   feedbackType: "positive" | "negative" | "neutral";
+  name: string;
 };
 
 export const columns: ColumnDef<Feedback>[] = [

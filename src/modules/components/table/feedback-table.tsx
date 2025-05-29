@@ -10,6 +10,7 @@ async function getData(): Promise<Feedback[]> {
       score: 5,
       status: "read",
       email: "jonhdoe@example.com",
+      name: "John Doe",
     },
     {
       id: "2",
@@ -18,6 +19,7 @@ async function getData(): Promise<Feedback[]> {
       score: 1,
       status: "read",
       email: "fakeUser3@example.com",
+      name: "Fake User 3",
     },
     {
       id: "3",
@@ -26,6 +28,7 @@ async function getData(): Promise<Feedback[]> {
       score: 3,
       status: "closed",
       email: "david@example.com",
+      name: "David Smith",
     },
     {
       id: "4",
@@ -34,6 +37,7 @@ async function getData(): Promise<Feedback[]> {
       score: 5,
       status: "pending",
       email: "ronaldo@example.com",
+      name: "Cristiano Ronaldo",
     },
   ];
 }
