@@ -12,29 +12,6 @@ I'm creating this starter kit to addresses common challenges when developing a f
 - **API Development**: Exclusive use of Hono for API development, providing great DX, type safety and performance
 - **UI Development**: Tailwindcss and shadcn/ui for maintainable, customizable components without the complexity of styling systems
 
-## Usage
-
-1. Clone and install dependencies:
-
-```bash
-git clone https://github.com/manethpak/next-fullstack-starter.git
-cd next-fullstack-starter
-pnpm install
-```
-
-2. Set up the database:
-
-```bash
-npx prisma generate
-npx prisma db push
-```
-
-3. Start development server:
-
-```bash
-pnpm dev
-```
-
 ## Project Structure
 
 ```bash
